@@ -51,10 +51,11 @@ const ActionItemCreateModal: React.FC<InterfaceActionItemCreateModalProps> = ({
         onHide={hideCreateModal}
       >
         <Modal.Header>
-          <p className={styles.titlemodal}>{t('actionItemDetails')}</p>
+          <Modal.Title>{t('actionItemDetails')}</Modal.Title>
           <Button
             variant="danger"
             onClick={hideCreateModal}
+            className={styles.closebtn}
             data-testid="createActionItemModalCloseBtn"
           >
             <i className="fa fa-times"></i>
@@ -124,7 +125,7 @@ const ActionItemCreateModal: React.FC<InterfaceActionItemCreateModalProps> = ({
               }}
             />
 
-            <div>
+            <div className={styles.datepicker}>
               <DatePicker
                 label={t('dueDate')}
                 className="mb-3 w-100"

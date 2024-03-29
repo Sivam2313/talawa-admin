@@ -29,8 +29,22 @@
   margin-top: 17px;
 }
 
+.closebtn {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   min-height: 100vh;
+}
+
+.controlbtns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .createActionItemButton {
@@ -57,6 +71,10 @@
   margin-left: 5px;
 }
 
+.datepicker {
+  margin-top: 1.25rem;
+}
+
 .dropdown {
   display: block;
 }
@@ -74,6 +92,26 @@
   transform: scale(1.5);
   color: var(--bs-danger);
   margin-bottom: 1rem;
+}
+
+.greenEditbtn {
+  margin: 1rem 0 0;
+  margin-top: 15px;
+  border: 1px solid var(--bs-gray-300);
+  box-shadow: 0 2px 2px var(--bs-gray-300);
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: var(--bs-primary);
+  width: 100%;
+  font-size: 16px;
+  color: var(--bs-white);
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  width: 47%;
 }
 
 .greenregbtn {
@@ -123,6 +161,11 @@ hr {
   flex-direction: column;
 }
 
+.modalheader {
+  display: flex;
+  justify-content: space-between;
+}
+
 .organizationActionItemsContainer h2 {
   margin: 0.6rem 0;
 }
@@ -135,6 +178,26 @@ hr {
   color: rgb(80, 80, 80);
 }
 
+.redDeletebtn {
+  margin: 1rem 0 0;
+  margin-top: 15px;
+  border: 1px solid var(--bs-gray-300);
+  box-shadow: 0 2px 2px var(--bs-gray-300);
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: var(--bs-danger);
+  width: 100%;
+  font-size: 16px;
+  color: var(--bs-white);
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  width: 47%;
+}
+
 .removeFilterIcon {
   cursor: pointer;
 }
@@ -144,12 +207,11 @@ hr {
 }
 
 .titlemodal {
-  color: var(--bs-gray-600);
+  color: #000000;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 20px;
   padding-bottom: 5px;
-  border-bottom: 3px solid var(--bs-primary);
   width: 65%;
 }
 

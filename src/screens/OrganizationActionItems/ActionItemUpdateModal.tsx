@@ -23,6 +23,7 @@ interface InterfaceActionItemCreateModalProps {
   formState: InterfaceFormStateType;
   setFormState: (state: React.SetStateAction<InterfaceFormStateType>) => void;
   updateActionItemHandler: (e: ChangeEvent<HTMLFormElement>) => Promise<void>;
+  deleteActionItemHandler: () => Promise<void>;
   t: (key: string) => string;
   membersData: InterfaceMemberInfo[] | undefined;
   dueDate: Date | null;
@@ -37,6 +38,7 @@ const ActionItemUpdateModal: React.FC<InterfaceActionItemCreateModalProps> = ({
   formState,
   setFormState,
   updateActionItemHandler,
+  deleteActionItemHandler,
   t,
   membersData,
   dueDate,
@@ -52,7 +54,7 @@ const ActionItemUpdateModal: React.FC<InterfaceActionItemCreateModalProps> = ({
         onHide={hideUpdateModal}
       >
         <Modal.Header>
-          <p className={styles.titlemodal}>{t('actionItemDetails')}</p>
+          <Modal.Title>{t('actionItemUpdate')}</Modal.Title>
           <Button
             variant="danger"
             onClick={hideUpdateModal}
@@ -132,14 +134,32 @@ const ActionItemUpdateModal: React.FC<InterfaceActionItemCreateModalProps> = ({
                 />
               </div>
             </div>
-
+            <div className={styles.controlbtns}>
+              <Button
+                type="submit"
+                className={styles.greenEditbtn}
+                value="editActionItem"
+                data-testid="editActionItemBtn"
+              >
+                {t('editActionItem')}
+              </Button>
+              <Button
+                className={styles.redDeletebtn}
+                value="deleteActionItem"
+                data-testid="deleteActionItemBtn"
+                onClick={deleteActionItemHandler}
+              >
+                {/* {t('editActionItem')} */}
+                Delete Action Item
+              </Button>
+            </div>
             <Button
               type="submit"
               className={styles.greenregbtn}
               value="editActionItem"
               data-testid="editActionItemBtn"
             >
-              {t('editActionItem')}
+              Update Action Item
             </Button>
           </Form>
         </Modal.Body>

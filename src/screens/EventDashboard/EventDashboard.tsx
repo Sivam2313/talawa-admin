@@ -7,6 +7,9 @@ import { EVENT_DETAILS } from 'GraphQl/Queries/Queries';
 import Loader from 'components/Loader/Loader';
 import { LeftDrawerEventWrapper } from 'components/LeftDrawerEvent/LeftDrawerEventWrapper';
 import { Navigate, useParams } from 'react-router-dom';
+import actionItemsContainer from '../../components/ActionItems/ActionItemsContainer';
+import { ActionItemsModalBody } from 'components/ActionItems/ActionItemsModalBody';
+import events from '../UserPortal/Events/Events';
 
 const EventDashboard = (): JSX.Element => {
   // Get the Event ID from the URL
@@ -68,53 +71,10 @@ const EventDashboard = (): JSX.Element => {
       event={eventData.event}
       key={`${eventData?.event._id || 'loading'}EventDashboard`}
     >
-      <div className={styles.content}>
-        <Row>
-          <Col>
-            <div className={styles.eventContainer}>
-              <div className={styles.eventDetailsBox}>
-                {/* Side Bar - Static Information about the Event */}
-                <div className={styles.time}>
-                  <p>
-                    <b className={styles.startTime}>
-                      {eventData.event.startTime !== null
-                        ? `${formatTime(eventData.event.startTime)}`
-                        : ``}
-                    </b>{' '}
-                    <span className={styles.startDate}>
-                      {formatDate(eventData.event.startDate)}{' '}
-                    </span>
-                  </p>
-                  <p className={styles.to}>TO</p>
-                  <p>
-                    <b className={styles.endTime}>
-                      {' '}
-                      {eventData.event.endTime !== null
-                        ? `${formatTime(eventData.event.endTime)}`
-                        : ``}
-                    </b>{' '}
-                    <span className={styles.endDate}>
-                      {formatDate(eventData.event.endDate)}{' '}
-                    </span>
-                  </p>
-                </div>
-                <h4 className={styles.titlename}>{eventData.event.title}</h4>
-                <p className={styles.description}>
-                  {eventData.event.description}
-                </p>
-                <p className={styles.toporgloc}>
-                  <b>Location:</b> <span>{eventData.event.location}</span>
-                </p>
-                <p className={styles.toporgloc}>
-                  <b>Registrants:</b>{' '}
-                  <span>{eventData.event.attendees.length}</span>
-                </p>
-                <br />
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </div>
+      <ActionItemsModalBody
+        eventId={eventData.event._id}
+        organizationId={eventData.event.organization._id}
+      />
     </LeftDrawerEventWrapper>
   );
 };

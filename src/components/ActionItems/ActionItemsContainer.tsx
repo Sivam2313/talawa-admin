@@ -37,7 +37,7 @@ function actionItemsContainer({
   actionItemsConnection: 'Organization' | 'Event';
   actionItemsData: InterfaceActionItemInfo[] | undefined;
   membersData: InterfaceMemberInfo[] | undefined;
-  actionItemsRefetch: any;
+  actionItemsRefetch: any; // eslint-disable-line
 }): JSX.Element {
   const { t } = useTranslation('translation', {
     keyPrefix: 'organizationActionItems',
@@ -433,6 +433,7 @@ function actionItemsContainer({
         formState={formState}
         setFormState={setFormState}
         updateActionItemHandler={updateActionItemHandler}
+        deleteActionItemHandler={deleteActionItemHandler}
         t={t}
         membersData={membersData}
         dueDate={dueDate}

@@ -80,7 +80,7 @@ export const ActionItemsModalBody = ({
     data: InterfaceActionItemList | undefined;
     loading: boolean;
     error?: Error | undefined;
-    refetch: any;
+    refetch: any; // eslint-disable-line
   } = useQuery(ACTION_ITEM_LIST, {
     variables: {
       organizationId,
@@ -174,12 +174,16 @@ export const ActionItemsModalBody = ({
 
   return (
     <>
-      <div className="mb-3 d-flex justify-content-between align-items-center">
-        <span className="fw-bold text-secondary ms-2">
-          <span className="d-none d-md-inline fw-bold text-dark">Status: </span>
-          {actionItemsData?.actionItemsByOrganization.length} action items
-          assigned, {completedActionItemsCount} completed
-        </span>
+      <div className="mb-3 d-flex justify-content-end align-items-center">
+        {/* <span className="fw-bold text-secondary ms-2">
+          <span className={styles.headingActionItem}>
+            <span className="d-none d-md-inline fw-bold text-dark">
+              Status:
+            </span>
+            {actionItemsData?.actionItemsByOrganization.length} action items
+            assigned, {completedActionItemsCount} completed
+          </span>
+        </span> */}
 
         <Button
           type="submit"

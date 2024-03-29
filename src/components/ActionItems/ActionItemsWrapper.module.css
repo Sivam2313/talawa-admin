@@ -40,7 +40,7 @@ button .iconWrapperSm {
   transition:
     transform 0.2s,
     box-shadow 0.2s;
-  max-width: 100px;
+  max-width: 180px;
 }
 
 .message {
@@ -50,4 +50,15 @@ button .iconWrapperSm {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/* css for mobile screen */
+@media (max-width: 768px) {
+  .headingActionItem {
+    font-size: 0.75rem;
+  }
+  .greenregbtn {
+    max-width: 128px;
+    font-size: 0.75rem;
+  }
 }

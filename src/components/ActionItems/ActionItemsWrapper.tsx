@@ -30,14 +30,14 @@ export const ActionItemsWrapper = (props: PropType): JSX.Element => {
         <div className={styles.iconWrapper}>
           <IconComponent name="Action Items" fill="var(--bs-secondary)" />
         </div>
-        {t('eventActionItems')}
+        Event Action Items
       </Button>
       {showModal && (
         <ActionItemsModal
           show={showModal}
           handleClose={(): void => setShowModal(false)}
-          orgId={props.orgId}
-          eventId={props.eventId}
+          orgId={props.orgId} // eslint-disable-line
+          eventId={props.eventId} // eslint-disable-line
         />
       )}
     </>
